@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="RamTech Cattle Log">
+<meta name="theme-color" content="#2f6b3a">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icon-180.png">
+<title>RamTech Cattle Log</title>
+<style>
+:root{--g:#2f6b3a;--gl:#e8f1e9;--bg:#f4f5f2;--t:#1c2420;--m:#6b756e;--r:#c0392b;--o:#d98a1f}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{margin:0;font:16px -apple-system,system-ui,sans-serif;background:var(--bg);color:var(--t);padding-bottom:calc(80px + env(safe-area-inset-bottom))}
+header{background:var(--g);color:#fff;padding:calc(12px + env(safe-area-inset-top)) 16px 12px;position:sticky;top:0;z-index:5;display:flex;align-items:center;gap:10px}
+header h1{font-size:20px;margin:0;flex:1}
+header button{background:none;border:0;color:#fff;font-size:17px;padding:0}
+main{padding:12px}
+.card{background:#fff;border-radius:12px;padding:12px;margin-bottom:10px;box-shadow:0 1px 2px #0001}
+.row{display:flex;align-items:center;gap:10px}
+.grow{flex:1;min-width:0}
+.tag{font-weight:700;font-size:17px}
+.sub{color:var(--m);font-size:14px}
+.pill{font-size:12px;padding:4px 9px;border-radius:99px;background:var(--gl);color:var(--g);white-space:nowrap;border:0}
+.pill.bad{background:#f9d6d2;color:var(--r)}
+input,select,textarea{width:100%;padding:11px;border:1px solid #cfd5d0;border-radius:10px;font:inherit;background:#fff;margin:4px 0 10px}
+label{font-size:13px;color:var(--m)}
+.btn{display:block;width:100%;padding:13px;border:0;border-radius:10px;background:var(--g);color:#fff;font:600 16px -apple-system,sans-serif;margin:8px 0}
+.btn.sec{background:var(--gl);color:var(--g)}.btn.del{background:#f9d6d2;color:var(--r)}
+nav{position:fixed;bottom:0;left:0;right:0;display:flex;background:#fff;border-top:1px solid #dde;padding-bottom:env(safe-area-inset-bottom)}
+nav button{flex:1;padding:8px 0;border:0;background:none;font-size:12px;color:var(--m)}
+nav button.on{color:var(--g);font-weight:700}
+nav b{display:block;font-size:20px}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.stat{background:#fff;border-radius:12px;padding:14px;text-align:center}
+.stat b{font-size:28px;display:block;color:var(--g)}
+h2{font-size:16px;margin:16px 0 8px}
+.fab{position:fixed;right:16px;bottom:calc(84px + env(safe-area-inset-bottom));width:56px;height:56px;border-radius:50%;border:0;background:var(--g);color:#fff;font-size:30px;box-shadow:0 3px 8px #0004}
+.empty{text-align:center;color:var(--m);padding:30px}
+</style>
+</head>
+<body>
+<header><button id="back" hidden>‹ Back</button><h1 id="title">RamTech Cattle Log</h1></header>
+<main id="app"></main>
+<button class="fab" id="fab">+</button>
+<nav>
+<button data-v="home"><b>🏠</b>Home</button>
+<button data-v="herd"><b>🐄</b>Herd</button>
+<button data-v="pastures"><b>🌾</b>Pastures</button>
+<button data-v="tasks"><b>🩺</b>Health</button>
+<button data-v="data"><b>💾</b>Data</button>
+</nav>
+<script src="app.js"></script>
+</body>
+</html>
